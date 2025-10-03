@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'MS Sans Serif';
+    src: url('fonts/MS Sans Serif.ttf');
+}
+
+* {
+    font-family: 'MS Sans Serif';
+}
+
+.app {
+    background-color: #008080;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.app .game {
+    transform: scale(2);
+}
