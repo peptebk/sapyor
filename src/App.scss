@@ -1,0 +1,45 @@
+#root {
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.board-container {
+    display: flex;
+    justify-content: center;
+}
+
+.difficulty-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    
+    button {
+        background-color: transparent;
+        border: 3px solid white;
+        color: white;
+        padding: 0.3rem 0.7rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        outline: none;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        &:focus {
+            outline: none;
+            border: 3px solid white;
+        }
+    }
+}
