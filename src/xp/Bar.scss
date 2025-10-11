@@ -1,0 +1,63 @@
+@use "./xp.scss";
+
+.xp.board > .bar {
+  margin-bottom: 6px;
+  padding: 4px 5px;
+
+  @include xp.xp-border(2px);
+
+  > .face {
+    width: 20px;
+    height: 20px;
+    @include xp.xp-border-rev(2px);
+    outline: 1px solid var(--cell-line);
+    background-position: center center;
+    background-size: 20px 20px;
+    box-sizing: content-box;
+    background-image: url(./img/face_normal.png);
+    background-repeat: no-repeat;
+
+    &:active {
+      border: none;
+      width: 22px;
+      height: 22px;
+      border-top: 1px solid var(--cell-line);
+      border-left: 1px solid var(--cell-line);
+    }
+
+    &.click {
+      background-image: url(./img/face_click.png);
+    }
+    &.dead {
+      background-image: url(./img/face_cry.png);
+    }
+    &.won {
+      background-image: url(./img/face_sunglasses.png);
+    }
+  }
+
+  > .num {
+    min-width: 13px;
+    height: 23px;
+    background: #000000;
+    box-sizing: content-box;
+    @include xp.xp-border(1px);
+
+    > .num-item {
+      width: 13px;
+      height: 23px;
+      background-image: url(./img/number_base.png);
+
+      > .n {
+        width: 13px;
+        height: 23px;
+
+        @for $i from 0 through 9 {
+          &.n-#{$i} {
+            background-image: url("./img/number_#{$i}.png");
+          }
+        }
+      }
+    }
+  }
+}

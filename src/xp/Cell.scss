@@ -1,0 +1,38 @@
+@use "./xp.scss";
+
+.xp.board > .grid > .cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: var(--cell-bg);
+  border-left: 1px solid var(--cell-line);
+  border-top: 1px solid var(--cell-line);
+  background-position: center center;
+  background-size: 16px 16px;
+
+  &:not(.open),
+  &.flag.preview {
+    @include xp.xp-border-rev(2px);
+
+    &.flag {
+      background-image: url(./img/flag.png);
+    }
+  }
+
+  &.open {
+    &.bomb {
+      background-image: url(./img/bomb.png);
+
+      &.boom {
+        background-color: rgb(255, 0, 0);
+      }
+    }
+    &.flag:not(.bomb):not(.preview) {
+      background-image: url(./img/err.png);
+    }
+    @for $i from 1 through 8 {
+      &.n-#{$i} {
+        background-image: url(./img/#{$i}.png);
+      }
+    }
+  }
+}
